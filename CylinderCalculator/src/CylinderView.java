@@ -66,70 +66,14 @@ public class CylinderView extends JFrame implements Printable {
 	private JTextArea textArea;
 	private JLabel pressureRequiredAxial;
 	private JTextField tfMotorRpm;
-	private JLabel lblResFluxValue; // Amount of fluctuation in
-									// reservoir volume between
-									// extend and retract.
+	private JLabel lblResFluxValue;
 
-	private static final String[] lengthUnits = { "in", "mm" }; // This
-																// will
-																// be
-																// either
-																// "in"
-																// or
-																// "mm"
-																// depending
-																// on
-																// Units
-																// RadioButtons
-	private static final String[] areaUnits = { "in\u00B2", "cm\u00B2" }; // This
-																			// will
-																			// be
-																			// either
-																			// "si"
-																			// or
-																			// "sc"
-																			// depending
-																			// on
-																			// Units
-																			// RadioButtons
-	private static final String[] volumeUnits = { "in\u00B3", "cc" }; // This
-																		// will
-																		// be
-																		// either
-																		// "ci"
-																		// or
-																		// "cc"
-																		// depending
-																		// on
-																		// Units
-																		// RadioButtons
-	private static final String[] pressureUnits = { "psi", "bar" }; // This
-																	// will
-																	// be
-																	// either
-																	// "psi"
-																	// or
-																	// "bar"
-																	// depending
-																	// on
-																	// Units
-																	// RadioButtons
-	private static final String[] flowUnits = { "gpm", "lpm" }; // This
-																// will
-																// be
-																// either
-																// "gpm"
-																// or
-																// "lpm"
-																// depending
-																// on
-																// Units
-																// RadioButtons
-	private static final String[] axialDirection = { "push", "pull" }; // Direction
-																		// of
-																		// applied
-																		// axial
-																		// load
+	private static final String[] lengthUnits = { "in", "mm" };
+	private static final String[] areaUnits = { "in\u00B2", "cm\u00B2" };
+	private static final String[] volumeUnits = { "in\u00B3", "cc" };
+	private static final String[] pressureUnits = { "psi", "bar" };
+	private static final String[] flowUnits = { "gpm", "lpm" };
+	private static final String[] axialDirection = { "push", "pull" };
 
 	private JLabel lblPsi;
 	private JTextField displTextField;
@@ -263,7 +207,7 @@ public class CylinderView extends JFrame implements Printable {
 
 		setTitle("Cylinder Calculator");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 665, 564);//100,100,665,564
+		setBounds(100, 100, 665, 564);// 100,100,665,564
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -766,7 +710,7 @@ public class CylinderView extends JFrame implements Printable {
 
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setOrientation(SwingConstants.VERTICAL);
-		separator_2.setBounds(295, 272, 12, 220);//241
+		separator_2.setBounds(295, 272, 12, 220);// 241
 		panel.add(separator_2);
 
 		JSeparator separator_3 = new JSeparator();
@@ -1202,8 +1146,10 @@ public class CylinderView extends JFrame implements Printable {
 		}
 		g2d.scale(scaleFactor, scaleFactor);
 		Date date = new Date();
-		//g2d.drawString("Printed:  " + date.toString(), (int)(paperWidth/2-100), (int)(frameHeight+20));
-		g2d.drawString("Printed:  " + date.toString(), (int)(frameWidth/2-100), (int)(frameHeight+20));
+		// g2d.drawString("Printed:  " + date.toString(),
+		// (int)(paperWidth/2-100), (int)(frameHeight+20));
+		g2d.drawString("Printed:  " + date.toString(),
+				(int) (frameWidth / 2 - 100), (int) (frameHeight + 20));
 		this.printAll(g);
 		return PAGE_EXISTS;
 	}
