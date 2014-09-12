@@ -33,7 +33,8 @@ public class Cylinder implements Serializable {
 
 	// constructors...
 	public Cylinder() {
-		new Cylinder(getBore(), getStroke(), getRodDiameter(), getPressure(), isDoubleActing());
+		new Cylinder(getBore(), getStroke(), getRodDiameter(), getPressure(),
+				isDoubleActing());
 	}
 
 	public Cylinder(double bore, double stroke, double rodDiameter,
@@ -243,7 +244,8 @@ public class Cylinder implements Serializable {
 				+ " si\n" + "Rod Piston Area:\t"
 				+ nf2.format(getRodEndPistonArea()) + " si\n"
 				+ "Double-Acting:      \t" + isDoubleActing() + "\n"
-				+ "Rod Volume:\t\t" + nf2.format(getRodVolume()) + " ci\n"
+				+ "Rod Volume:\t\t" + nf2.format(getRodVolume()) + " ci  ("
+				+ nf2.format(toGallons(getRodVolume())) + " gal)\n"
 				+ "Rod-end Capacity:\t" + nf2.format(getRodEndCapacity())
 				+ " ci  (" + nf2.format(toGallons(getRodEndCapacity()))
 				+ " gal)\n" + "Cap-end Capacity:\t"
@@ -255,5 +257,4 @@ public class Cylinder implements Serializable {
 				+ nf2.format(getRetractForce()) + " lbs\n";
 		return outputString;
 	}
-
 }
